@@ -1,1 +1,1 @@
-# This is my portfolio website built with NextJS
+# This is my portolfio made with NextJS
