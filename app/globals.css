@@ -12,7 +12,7 @@
   --font-jetbrains-mono: var(--font-jetbrainsMono);
   --color-primary: #1c1c22;
   --color-accent: #00ff99;      
-  --color-accent-hover: #00e1; 
+  --color-accent-hover: rgb(39, 163, 114); 
   --container-padding: 15px;
   --container-center: true;
   --radius-sm: 640px;
@@ -124,5 +124,14 @@
   }
   body {
     @apply font-jetbrains-mono bg-primary text-white leading-loose;
+  }
+  h1 {
+    @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
+  }
+  h2 {
+    @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold;
+  }
+  h3 {
+    @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
   }
 }
