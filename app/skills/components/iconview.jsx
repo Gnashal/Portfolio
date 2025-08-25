@@ -17,7 +17,7 @@ function IconView({ icons }) {
               </span>
             </TooltipTrigger>
             <TooltipContent>
-              <p>{icon.label}</p>
+              <p className="capitalize">{icon.label}</p>
             </TooltipContent>
           </Tooltip>
         ))}

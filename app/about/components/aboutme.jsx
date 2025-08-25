@@ -39,6 +39,7 @@ const about = {
             
         ]
     }
+// colors = #232329
 
 function AboutMe(){
     return (
@@ -49,7 +50,8 @@ function AboutMe(){
                                 <ScrollArea className="h-[500px]">
                                     <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                                         {about.info.map((item, index) => {
-                                            return <li key={index} className="bg-[#232329] px-8 py-4 rounded-[20px] 
+                                            return <li key={index} 
+                                            className="bg-[#232329] px-8 py-4 rounded-[20px]
                                             flex flex-col justify-center items-center lg:items-start gap-1">
                                                 <span className='text-accent text-center lg:text-left'>{item.fieldName}</span>
                                                 <span className='text-xl max-w-[300px] min-h-[60px] text-center lg:text-left'>{item.fieldValue}</span>
