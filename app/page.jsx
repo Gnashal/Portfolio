@@ -5,6 +5,7 @@ import Socials from "@/components/Socials";
 import Photo from "@/components/Photo";
 import Stats from "@/components/Stats";
 
+const words = ["Efficient", "Learner", "User-Focused", "Versatile", "Innovative", "Collaborative", "Problem Solver"]
 
 function Homepage() {
   return (
@@ -19,8 +20,17 @@ function Homepage() {
                 Yousif Ceballos
               </span> 
             </h1>
-            <p className="text-xl max-w-[500px] mb-9 text-white/80">
-              Efficient · Learner · User-focused · Versatile · Innovative · Collaborative · Problem solver</p>
+            <div className="flex flex-wrap justify-center xl:justify-start items-center gap-3 mb-9 max-w-xl mx-auto xl:mx-0">
+            {words.map((word, index) => (
+              <div key={index} className="flex items-center gap-3">
+                <p className="text-xl text-white/80">{word}</p>
+                {index !== words.length - 1 && (
+                  <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                )}
+              </div>
+            ))}
+          </div>
+
             {/*buttons and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <Button variant="outline" size="lg" className="uppercase flex items-center gap-2">
