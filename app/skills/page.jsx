@@ -3,37 +3,53 @@ import { motion } from "framer-motion";
 import { BsArrowDownRight } from "react-icons/bs";
 import { DiJavascript1, DiPython, DiJava, DiReact, DiNodejs, DiDocker, 
     DiGithub, DiGit, DiMongodb, DiPostgresql, DiMysql, DiHtml5, DiCss3, DiAws, DiTerminal, DiGo, DiNginx } from "react-icons/di";
-
+import IconView from "./components/iconview";
 const skills = [
   {
     num: '01',
     title: 'Programming Languages',
-    description: 'JavaScript, Python, Java, C',
-    icons: [<DiJavascript1 key="js" />, <DiPython key="py" />, <DiJava key="java" />, <DiTerminal key="c" />, <DiGo key="go"/>],
+    icons: [
+      { icon: <DiJavascript1 key="js" />, label: 'JavaScript' },
+      { icon: <DiPython key="py" />, label: 'Python' },
+      { icon: <DiJava key="java" />, label: 'Java' },
+      { icon: <DiTerminal key="c" />, label: 'C' },
+      { icon: <DiGo key="go" />, label: 'Go' },
+    ],
   },
   {
     num: '02',
     title: 'Frameworks & Libraries',
-    description: 'React, Node.js',
-    icons: [<DiReact key="react" />, <DiNodejs key="node" />],
+    icons: [
+      { icon: <DiReact key="react" />, label: 'React' },
+      { icon: <DiNodejs key="node" />, label: 'Node.js' },
+    ],
   },
   {
     num: '03',
     title: 'Tools & Platforms',
-    description: 'Git, GitHub, Docker, AWS',
-    icons: [<DiGit key="git" />, <DiGithub key="github" />, <DiDocker key="docker" />, <DiAws key="aws" />],
+    icons: [
+      { icon: <DiGit key="git" />, label: 'Git' },
+      { icon: <DiGithub key="github" />, label: 'GitHub' },
+      { icon: <DiDocker key="docker" />, label: 'Docker' },
+      { icon: <DiAws key="aws" />, label: 'AWS' },
+    ],
   },
   {
     num: '04',
     title: 'Databases',
-    description: 'MongoDB, PostgreSQL, MySQL',
-    icons: [<DiMongodb key="mongodb" />, <DiPostgresql key="postgresql" />, <DiMysql key="mysql" />],
+    icons: [
+      { icon: <DiMongodb key="mongodb" />, label: 'MongoDB' },
+      { icon: <DiPostgresql key="postgresql" />, label: 'PostgreSQL' },
+      { icon: <DiMysql key="mysql" />, label: 'MySQL' },
+    ],
   },
   {
     num: '05',
     title: 'Web Technologies',
-    description: 'HTML5, CSS3',
-    icons: [<DiHtml5 key="html5" />, <DiCss3 key="css3" />],
+    icons: [
+      { icon: <DiHtml5 key="html5" />, label: 'HTML5' },
+      { icon: <DiCss3 key="css3" />, label: 'CSS3' },
+    ],
   },
 ];
 
@@ -62,16 +78,8 @@ function Skills() {
                     </div>
                     {/* heading */}
                     <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">{skill.title}</h2>
-                    {/* description */}
-                    <div className="flex gap-6 mt-4">
-                        {skill.icons.map((icon, index) => {
-                            return <span key={index}
-                            className="w-12 h-12 text-5xl flex justify-center
-                            items-center text-white hover:text-accent transition-all duration-500"
-                            >{icon}
-                            </span>
-                        })}
-                    </div>
+                    {/* icon */}
+                    <IconView icons={skill.icons} />
                     {/* border */}
                     <div className="border-b border-white/20 w-full"></div>    
                 </div>
