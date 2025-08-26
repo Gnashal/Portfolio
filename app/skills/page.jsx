@@ -77,7 +77,7 @@ function Skills() {
                          </div>
                     </div>
                     {/* heading */}
-                    <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">{skill.title}</h2>
+                    <h2 className="text-[42px] font-bold leading-none text-accent group-hover:text-white transition-all duration-500">{skill.title}</h2>
                     {/* icon */}
                     <IconView icons={skill.icons} />
                     {/* border */}

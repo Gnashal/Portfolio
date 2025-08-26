@@ -1,1 +1,1 @@
-# This is my portolfio made with NextJS
+## Portfolio built with NextJS, Tailwind and Framer Motion

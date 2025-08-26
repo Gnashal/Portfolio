@@ -1,9 +1,10 @@
 "use client"
 
-import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet"
+import {Sheet, SheetContent, SheetTrigger, SheetTitle} from "@/components/ui/sheet"
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import {CiMenuFries} from "react-icons/ci"
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden"
 
 const links = [
     {
@@ -36,9 +37,9 @@ function MobileNav(){
                     <CiMenuFries className="text-[32px] text-accent"/>
                 </SheetTrigger>
                 <SheetContent className="flex flex-col">
-                    {/* <VisuallyHidden>
+                    <VisuallyHidden>
                         <SheetTitle>Mobile Navigation</SheetTitle>
-                    </VisuallyHidden> */}
+                    </VisuallyHidden>
                     <div className="mt-32 mb-40 text-center text-2xl">
                         <h1 className="text-4xl font-semibold">
                             <Link href="/">Yousif<span className="text-accent">.</span></Link>
