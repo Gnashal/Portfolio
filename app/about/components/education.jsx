@@ -2,36 +2,8 @@
 
 import { TabsContent } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { education } from "../data/data";
 
-
-const education = {
-        icon: "/assets/resume/cap.svg", 
-        title: "My Education", 
-        description: "Coding my way through college, chasing dreams and deadlines!",
-        items: [
-            {
-                insitution: "University of San Carlos",
-                level: "Bachelor of Science in Information Technology",
-                year: "2023 - Present",
-            },
-            {
-                insitution: "Patronage of Mary Development School",
-                level: "Seior High School - STEM Strand",
-                year: "2021 - 2023",
-            },
-            {
-                insitution: "Patronage of Mary Development School",
-                level: "Junior High School",
-                year: "2017 - 2021",
-            },
-            {
-                insitution: "Patronage of Mary Development School",
-                level: "Elementary School",
-                year: "2009 - 2017",
-            },
-            
-        ]
-    }
 
 function Education() {
     return (
