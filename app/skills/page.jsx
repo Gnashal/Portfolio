@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence} from "framer-motion";
 import { skills } from "./data/data";
 import { useState } from "react";
 import SkillCard from "./components/skillcard";
@@ -23,18 +23,38 @@ function Skills() {
             className="grid grid-cols-1 md:grid-cols-2 gap-[60px]">
             {skills.map((skill, index) => {
               const isActive = activeIndex === index;
+                return (
+                  <div
+                    key={index}
+                    className="flex-1 flex flex-col justify-center gap-6 group relative"
+                  >
+                    <AnimatePresence mode="wait">
+                      {isActive ? (
+                        <motion.div
+                          key="description"
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <DescriptionCard description={skill.description} onClick={() => handleButtonPress(index)} />
+                        </motion.div>
+                      ) : (
+                        <motion.div
+                          key="skill"
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <SkillCard skill={skill} onClick={() => handleButtonPress(index)} />
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
 
-
-                return <div key={index} className="flex-1 flex flex-col justify-center gap-6 group">
-                  {isActive ? (
-                  // description card 
-                    <DescriptionCard onClick={() => handleButtonPress(index)}/>
-                  ): (
-                    // skill card
-                      <SkillCard skill={skill} onClick={() => handleButtonPress(index)}/>
-                    )}
-                </div>
-              
+                    <div className="border-b border-white/20 w-full mt-6" />
+                  </div>
+                )
             })}
         </motion.div>
       </div>
