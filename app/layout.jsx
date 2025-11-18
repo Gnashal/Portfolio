@@ -10,7 +10,7 @@ const jetbrainsmono = JetBrains_Mono({
   variable: "--font-jetbrainsMono",
 });
 export const metadata = {
-  title: "Yousif Quirico Ceballos",
+  title: "Yousif | Portfolio",
   description: "Portfolio of Yousif Quirico Ceballos",
 };
 
