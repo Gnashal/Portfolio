@@ -1,7 +1,21 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import MobileNav from "./MobileNav";
 import Nav from "./Nav";
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetHeader,
+  SheetFooter,
+  SheetTitle,
+  SheetClose,
+} from "@/components/ui/sheet";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import HireMeForm from "./HireMeForm";
+
 function Header() {
   return (
     <>
@@ -15,9 +29,28 @@ function Header() {
 
           <div className="hidden xl:flex items-center gap-8">
             <Nav />
-            <Link href="/contact">
-              <Button className="disabled">Hire me</Button>
-            </Link>
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button className="">Hire me</Button>
+              </SheetTrigger>
+              <SheetContent side="center" className="p-4">
+                <VisuallyHidden>
+                  <SheetHeader>
+                    <SheetTitle>Hire me</SheetTitle>
+                  </SheetHeader>
+                </VisuallyHidden>
+                <div className="mt-2">
+                  <HireMeForm />
+                </div>
+                <SheetFooter>
+                  <div className="flex gap-2">
+                    <SheetClose asChild>
+                      <Button variant="outline">Close</Button>
+                    </SheetClose>
+                  </div>
+                </SheetFooter>
+              </SheetContent>
+            </Sheet>
           </div>
           <div className="xl:hidden">
             <MobileNav />
