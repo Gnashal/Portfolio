@@ -1,39 +1,28 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import * as SheetPrimitive from "@radix-ui/react-dialog"
-import { cn } from "@/lib/utils"
+import * as React from "react";
+import * as SheetPrimitive from "@radix-ui/react-dialog";
+import { cn } from "@/lib/utils";
 
-import {IoMdClose} from "react-icons/io"
+import { IoMdClose } from "react-icons/io";
 
-function Sheet({
-  ...props
-}) {
+function Sheet({ ...props }) {
   return <SheetPrimitive.Root data-slot="sheet" {...props} />;
 }
 
-function SheetTrigger({
-  ...props
-}) {
+function SheetTrigger({ ...props }) {
   return <SheetPrimitive.Trigger data-slot="sheet-trigger" {...props} />;
 }
 
-function SheetClose({
-  ...props
-}) {
+function SheetClose({ ...props }) {
   return <SheetPrimitive.Close data-slot="sheet-close" {...props} />;
 }
 
-function SheetPortal({
-  ...props
-}) {
+function SheetPortal({ ...props }) {
   return <SheetPrimitive.Portal data-slot="sheet-portal" {...props} />;
 }
 
-function SheetOverlay({
-  className,
-  ...props
-}) {
+function SheetOverlay({ className, ...props }) {
   return (
     <SheetPrimitive.Overlay
       data-slot="sheet-overlay"
@@ -41,16 +30,41 @@ function SheetOverlay({
         "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50",
         className
       )}
-      {...props} />
+      {...props}
+    />
   );
 }
 
-function SheetContent({
-  className,
-  children,
-  side = "right",
-  ...props
-}) {
+function SheetContent({ className, children, side = "right", ...props }) {
+  // Centered modal layout
+  if (side === "center") {
+    return (
+      <SheetPortal>
+        <SheetOverlay />
+        <SheetPrimitive.Content
+          data-slot="sheet-content"
+          className={cn(
+            "fixed inset-0 z-50 flex items-center justify-center p-4",
+            className
+          )}
+          {...props}
+        >
+          <div
+            className={cn(
+              "bg-primary rounded-[12px] w-full max-w-3xl shadow-lg flex flex-col gap-4 overflow-hidden"
+            )}
+          >
+            {children}
+            <SheetPrimitive.Close className="absolute right-6 top-4 transition-opacity outline-none ">
+              <IoMdClose className="text-3xl text-accent" />
+              <span className="sr-only">Close</span>
+            </SheetPrimitive.Close>
+          </div>
+        </SheetPrimitive.Content>
+      </SheetPortal>
+    );
+  }
+
   return (
     <SheetPortal>
       <SheetOverlay />
@@ -68,10 +82,10 @@ function SheetContent({
             "data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom inset-x-0 bottom-0 h-auto border-t",
           className
         )}
-        {...props}>
+        {...props}
+      >
         {children}
-        <SheetPrimitive.Close
-          className="absolute right-6 top-4 transition-opacity outline-none ">
+        <SheetPrimitive.Close className="absolute right-6 top-4 transition-opacity outline-none ">
           <IoMdClose className="text-3xl text-accent" />
           <span className="sr-only">Close</span>
         </SheetPrimitive.Close>
@@ -80,51 +94,43 @@ function SheetContent({
   );
 }
 
-function SheetHeader({
-  className,
-  ...props
-}) {
+function SheetHeader({ className, ...props }) {
   return (
     <div
       data-slot="sheet-header"
       className={cn("flex flex-col gap-1.5 p-4", className)}
-      {...props} />
+      {...props}
+    />
   );
 }
 
-function SheetFooter({
-  className,
-  ...props
-}) {
+function SheetFooter({ className, ...props }) {
   return (
     <div
       data-slot="sheet-footer"
       className={cn("mt-auto flex flex-col gap-2 p-4", className)}
-      {...props} />
+      {...props}
+    />
   );
 }
 
-function SheetTitle({
-  className,
-  ...props
-}) {
+function SheetTitle({ className, ...props }) {
   return (
     <SheetPrimitive.Title
       data-slot="sheet-title"
       className={cn("text-foreground font-semibold", className)}
-      {...props} />
+      {...props}
+    />
   );
 }
 
-function SheetDescription({
-  className,
-  ...props
-}) {
+function SheetDescription({ className, ...props }) {
   return (
     <SheetPrimitive.Description
       data-slot="sheet-description"
       className={cn("text-muted-foreground text-sm", className)}
-      {...props} />
+      {...props}
+    />
   );
 }
 
@@ -137,4 +143,4 @@ export {
   SheetFooter,
   SheetTitle,
   SheetDescription,
-}
+};
