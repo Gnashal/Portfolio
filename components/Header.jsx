@@ -31,12 +31,12 @@ function Header() {
             <Nav />
             <Sheet>
               <SheetTrigger asChild>
-                <Button className="">Hire me</Button>
+                <Button className="">Contact Me</Button>
               </SheetTrigger>
               <SheetContent side="center" className="p-4">
                 <VisuallyHidden>
                   <SheetHeader>
-                    <SheetTitle>Hire me</SheetTitle>
+                    <SheetTitle>Contact Me</SheetTitle>
                   </SheetHeader>
                 </VisuallyHidden>
                 <div className="mt-2">
