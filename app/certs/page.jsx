@@ -22,6 +22,12 @@ const certs = [
     date: "January 2025",
     image: "/assets/certs/net_2.png",
   },
+  {
+    name: "NC2: Computer Systems Servicing",
+    issuer: "Technical Education and Skills Development Authority (TESDA)",
+    date: "December 17,2024",
+    image: "/assets/certs/NC.png",
+  },
 ];
 
 function CertificationsPage() {
