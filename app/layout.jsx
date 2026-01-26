@@ -1,4 +1,4 @@
-import { JetBrains_Mono} from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTranstition from "@/components/StairEffect";
@@ -12,20 +12,19 @@ const jetbrainsmono = JetBrains_Mono({
 export const metadata = {
   title: "Yousif | Portfolio",
   description: "Portfolio of Yousif Quirico Ceballos",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={jetbrainsmono.variable}>
+      <body className={jetbrainsmono.variable}>
         <Header />
-        <StairTranstition/>
-        <PageTransition>
-          {children}
-        </PageTransition>
+        <StairTranstition />
+        <PageTransition>{children}</PageTransition>
       </body>
     </html>
-
   );
 }
