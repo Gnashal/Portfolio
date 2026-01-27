@@ -20,4 +20,12 @@ export const projects = [
     image: "/assets/projects/stockwise.PNG",
     link: "https://github.com/OppenJayme/SUMMER-IM2-FINAL-PROJECTS",
   },
+  {
+    title: "Peer to Peer Chat System with full client side encryption",
+    description:
+      "A real-time chat application with end-to-end encryption for my Information Assurance and Security Cryptography Course." +
+      " Built with React, Electron, and Go + Gin with Websockets.",
+    image: "/assets/projects/p2pChat.png",
+    link: "https://github.com/Gnashal/IAS-Cryptography",
+  },
 ];
