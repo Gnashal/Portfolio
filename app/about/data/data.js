@@ -69,7 +69,7 @@ export const experience = {
     {
       company: "Talleco - Jobtarget Philippines",
       position: "Software Developer - Intern",
-      year: "2025 September - Present",
+      year: "2025 September - 2026 February",
     },
   ],
 };
